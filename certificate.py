@@ -1,6 +1,6 @@
 """
 ==============================================================================
- IEEE Student Branch VIT — Certificate Automation Suite
+ Accredify — Certificate Automation Suite
  (Enterprise Dashboard UI — Fluent / Azure Portal / GitHub Desktop inspired)
 ==============================================================================
 This file is a UI/UX redesign of the original Certificate Automation Suite.
@@ -113,7 +113,7 @@ OL_MAIL_ITEM = 0
 # PAGE CONFIGURATION
 # ==========================================================================
 st.set_page_config(
-    page_title="IEEE VIT | Certificate Automation Suite",
+    page_title="Accredify | Certificate Automation Suite",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -424,7 +424,7 @@ def generate_unique_id(row_index: int) -> str:
 def build_offline_verification_payload(unique_id: str, full_name: str,
                                         event_name: str, event_date_str: str) -> str:
     payload = (
-        "--- IEEE VIT CERTIFICATE VERIFICATION ---\n"
+        "--- Accredify CERTIFICATE VERIFICATION ---\n"
         "Status: Authentic Record\n"
         f"ID: {unique_id}\n"
         f"Issued To: {full_name}\n"
@@ -1001,7 +1001,7 @@ with st.sidebar:
         '<div style="display:flex; align-items:center; gap:8px;">'
         '<div style="width:28px; height:28px; border-radius:8px; background:var(--accent); color:#fff; '
         'display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.85rem;">C</div>'
-        '<div style="font-size:1.05rem; font-weight:800; letter-spacing:-0.01em;">IEEE VIT</div></div>'
+        '<div style="font-size:1.05rem; font-weight:800; letter-spacing:-0.01em;">Accredify</div></div>'
         '<div style="font-size:0.66rem; color:var(--text-dim); font-weight:600; text-transform:uppercase; '
         'letter-spacing:0.04em; margin-top:2px;">v2.1-Enterprise</div></div>',
         unsafe_allow_html=True,
@@ -1057,7 +1057,7 @@ with st.sidebar:
 # ==========================================================================
 outlook_ready = WINDOWS_COM_AVAILABLE  # same COM bridge powers both apps locally
 _NAV_TITLES = {
-    "dashboard": "IEEE VIT Certificate Automation Suite",
+    "dashboard": "Accredify Certificate Automation Suite",
     "certificates": "Generated Certificates",
     "monitoring": "Pipeline Monitoring",
     "security": "Security & Configuration",
@@ -1066,8 +1066,8 @@ _NAV_TITLES = {
 st.markdown(
     f"""
     <div class="topnav">
-        <div class="topnav-brand">🎓 IEEE VIT</div>
-        <div class="topnav-title">{_NAV_TITLES.get(st.session_state.active_nav, "IEEE VIT Certificate Automation Suite")}</div>
+        <div class="topnav-brand">🎓 Accredify</div>
+        <div class="topnav-title">{_NAV_TITLES.get(st.session_state.active_nav, "Accredify Certificate Automation Suite")}</div>
         <div class="topnav-status">
             {pill("Office COM Connected", "ok") if WINDOWS_COM_AVAILABLE else pill("Office COM Unavailable", "bad")}
             {pill("Outlook Ready", "ok") if outlook_ready else pill("Outlook Not Ready", "warn")}
@@ -1119,7 +1119,7 @@ if st.session_state.active_nav == "dashboard":
             st.markdown('<div class="card-primary"><div class="card-title">📌 Event Details</div>', unsafe_allow_html=True)
             ev_c1, ev_c2 = st.columns(2)
             with ev_c1:
-                event_name_input = st.text_input("Event Name", placeholder="e.g., IEEE VIT TechFest 2026", key="event_name_input")
+                event_name_input = st.text_input("Event Name", placeholder="e.g., Accredify TechFest 2026", key="event_name_input")
             with ev_c2:
                 event_date_input = st.date_input("Event Date", value=date.today(), key="event_date_input")
             event_date_str = event_date_input.strftime("%d %B %Y")
